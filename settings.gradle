@@ -1,0 +1,4 @@
+include ':voice_recorder'
+include ':visualizer'
+include ':app'
+rootProject.name = "Voice Recorder"

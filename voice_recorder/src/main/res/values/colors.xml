@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <!-- <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccentLight">#d1d7db</color>
+    <color name="cardviewBackGround">#F2F4F8</color>
+    <color name="gray">#7e7e7e</color>
+    <color name="gray_dark">#717171</color>
+
+    <color name="black_effective">#2a2a2a</color>
+    <color name="shadow">#d0d8dc</color>
+    <color name="red_dark">#F06423</color>
+    <color name="red_dark2">#D85A1B</color>
+    <color name="cyan_light">#c9ebee</color>
+    <color name="cyan">#b5e3e7</color>
+    <color name="cyan_dark">#70BDC6</color>
+
+    <color name="blue_black_dark">#13171d</color>
+    <color name="blue_grey_light">#a5b4c8</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    &lt;!&ndash; Theme Design - AVATAR &ndash;&gt;
+    <color name="startColor">#52A8F7</color>
+    <color name="centerColor">#5ABDF9</color>
+    <color name="endColor">#61CDF9</color>
+
+    <color name="buttonDisable">#efefef</color>
+    <color name="dark_icon_half_alpha">#4d000000</color>
+    <color name="dark_icon">#99000000</color>
+    <color name="primary">#2e57b1</color>
+    <color name="error">#ffdd2c00</color>
+    <color name="dark_icon_on_primary">#ff2a6046</color> &lt;!&ndash; 60% black on @color/primary &ndash;&gt;
+
+    <color name="fab1_voice_directory">#4caf50</color>
+    <color name="fab2_voice_directory">#2196f3</color>-->
+
+   <color name="navy_blue_dark">#1c3a4e</color>
+   <color name="green">#008000</color>
+   <color name="navy_blue">#214258</color>
+   <color name="colorAccent">#2e57b1</color>
+
+   <color name="startColor">#52A8F7</color>
+   <color name="centerColor">#5ABDF9</color>
+   <color name="endColor">#61CDF9</color>
+
+
+
+
+</resources>

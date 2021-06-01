@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <!-- action bar background - without android prefix -->
+        <item name="background">@drawable/toolbar_background_gradient</item>
+        <!-- action bar elevation - without android prefix -->
+        <item name="elevation">4dp</item>
+    </style>
+</resources>
