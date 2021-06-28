@@ -27,6 +27,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.avatar.voicerecorder.R;
+import com.avatar.voicerecorder.RecorderApplication;
 import com.avatar.voicerecorder.omrecorder.AudioChunk;
 import com.avatar.voicerecorder.omrecorder.OmRecorder;
 import com.avatar.voicerecorder.omrecorder.PullTransport;
@@ -81,6 +82,7 @@ public class AudioRecorderActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aar_activity_audio_recorder);
 
+        RecorderApplication.instance = (RecorderApplication) getApplication();
         if(savedInstanceState != null) {
             filePath = savedInstanceState.getString(ParamsUtils.EXTRA_FILE_PATH);
             source = (AudioSourceEnum) savedInstanceState.getSerializable(ParamsUtils.EXTRA_SOURCE);
