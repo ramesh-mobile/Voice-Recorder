@@ -82,7 +82,7 @@ public class AudioRecorderActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aar_activity_audio_recorder);
 
-        RecorderApplication.instance = (RecorderApplication) getApplication();
+        RecorderApplication.currActivityInstance = this;
         if(savedInstanceState != null) {
             filePath = savedInstanceState.getString(ParamsUtils.EXTRA_FILE_PATH);
             source = (AudioSourceEnum) savedInstanceState.getSerializable(ParamsUtils.EXTRA_SOURCE);

@@ -413,7 +413,7 @@ public class FileUtils {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 destFilePath = (file!=null)? file.getAbsolutePath():
                         Environment.getExternalStorageDirectory()+File.separator+ typeDirectory + File.separator + Config.APP_FOLDER + File.separator + imageFileName;
-                ContentResolver contentResolver = RecorderApplication.getInstance().getContentResolver();
+                ContentResolver contentResolver = RecorderApplication.getCurrActivityInstance().getApplication().getContentResolver();
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, imageFileName);
                 contentValues.put(MediaStore.MediaColumns.MIME_TYPE, mimeType);
