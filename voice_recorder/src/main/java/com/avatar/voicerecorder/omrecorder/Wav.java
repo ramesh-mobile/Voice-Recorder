@@ -15,6 +15,8 @@
  */
 package com.avatar.voicerecorder.omrecorder;
 
+import android.content.Context;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,8 +33,8 @@ import java.io.RandomAccessFile;
 final class Wav extends AbstractRecorder {
   private final RandomAccessFile wavFile;
 
-  public Wav(PullTransport pullTransport, File file) {
-    super(pullTransport,file);
+  public Wav(Context context,PullTransport pullTransport, File file) {
+    super(context,pullTransport,file);
     this.wavFile = randomAccessFile(file);
   }
 

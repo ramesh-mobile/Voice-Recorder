@@ -82,7 +82,6 @@ public class AudioRecorderActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aar_activity_audio_recorder);
 
-        RecorderApplication.currActivityInstance = this;
         if(savedInstanceState != null) {
             filePath = savedInstanceState.getString(ParamsUtils.EXTRA_FILE_PATH);
             source = (AudioSourceEnum) savedInstanceState.getSerializable(ParamsUtils.EXTRA_SOURCE);
@@ -399,7 +398,7 @@ public class AudioRecorderActivity extends AppCompatActivity
 
         if(recorder == null) {
             timerView.setText("00:00:00");
-            recorder = OmRecorder.wav(
+            recorder = OmRecorder.wav(this,
                     new PullTransport.Default(Util.getMic(source, channel, sampleRate), AudioRecorderActivity.this),
                     new File(filePath));
         }

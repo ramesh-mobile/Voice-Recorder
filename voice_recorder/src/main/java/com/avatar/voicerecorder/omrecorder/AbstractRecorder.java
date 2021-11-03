@@ -1,5 +1,7 @@
 package com.avatar.voicerecorder.omrecorder;
 
+import android.content.Context;
+
 import com.avatar.voicerecorder.utils.Config;
 import com.avatar.voicerecorder.utils.FileUtils;
 
@@ -17,10 +19,10 @@ abstract class AbstractRecorder implements Recorder {
   protected final File file;
   private final OutputStream outputStream;
 
-  protected AbstractRecorder(PullTransport pullTransport, File file) {
+  protected AbstractRecorder(Context context,PullTransport pullTransport, File file) {
     this.pullTransport = pullTransport;
     this.file = file;
-    this.outputStream = outputStream(file);
+    this.outputStream = outputStream(context,file);
   }
 
   @Override public void startRecording() {
@@ -37,10 +39,10 @@ abstract class AbstractRecorder implements Recorder {
 
   private static final String TAG = "AbstractRecorder";
 
-  private OutputStream outputStream(File file) {
+  private OutputStream outputStream(Context context, File file) {
     if (file == null) throw new RuntimeException("file is null !");
     OutputStream outputStream = null;
-    outputStream = FileUtils.getOutPutStream(Config.AUDIO_MIME_TYPE, file);
+    outputStream = FileUtils.getOutPutStream(context,Config.AUDIO_MIME_TYPE, file);
     try {
 
       //outputStream = new FileOutputStream(file);logp

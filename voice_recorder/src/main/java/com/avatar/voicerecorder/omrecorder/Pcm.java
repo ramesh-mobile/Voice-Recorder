@@ -15,6 +15,8 @@
  */
 package com.avatar.voicerecorder.omrecorder;
 
+import android.content.Context;
+
 import java.io.File;
 
 /**
@@ -25,7 +27,7 @@ import java.io.File;
  * @skype kailash.09
  */
 final class Pcm extends AbstractRecorder {
-  public Pcm(PullTransport pullTransport, File file) {
-    super(pullTransport, file);
+  public Pcm(Context context, PullTransport pullTransport, File file) {
+    super(context,pullTransport, file);
   }
 }

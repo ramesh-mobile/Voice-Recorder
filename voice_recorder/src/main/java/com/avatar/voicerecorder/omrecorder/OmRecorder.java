@@ -15,6 +15,8 @@
  */
 package com.avatar.voicerecorder.omrecorder;
 
+import android.content.Context;
+
 import java.io.File;
 
 /**
@@ -28,12 +30,12 @@ public final class OmRecorder {
   private OmRecorder() {
   }
 
-  public static Recorder pcm(PullTransport pullTransport, File file) {
-    return new Pcm(pullTransport, file);
+  public static Recorder pcm(Context context,PullTransport pullTransport, File file) {
+    return new Pcm(context,pullTransport, file);
   }
 
-  public static Recorder wav(PullTransport pullTransport, File file) {
-    return new Wav(pullTransport, file);
+  public static Recorder wav(Context context, PullTransport pullTransport, File file) {
+    return new Wav(context,pullTransport, file);
   }
 
 }

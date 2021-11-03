@@ -390,11 +390,11 @@ public class FileUtils {
 
 
     //get audio file outputStream object
-    public static File getAudioCopyFile(String sourceFilePath){
+    public static File getAudioCopyFile(Context context,String sourceFilePath){
         Uri mUri = null;
         String destFilePath = "";
         try {
-            OutputStream outputStream = getOutPutStream(Config.AUDIO_MIME_TYPE,
+            OutputStream outputStream = getOutPutStream(context,Config.AUDIO_MIME_TYPE,
                     new File(destFilePath = generateFilePathWithTimeStamp(Config.WAV)));
             Files.copy(new File(sourceFilePath).toPath(), outputStream);
             Files.deleteIfExists(new File(sourceFilePath).toPath());
@@ -402,7 +402,7 @@ public class FileUtils {
         return new File(destFilePath);
     }
 
-    public static OutputStream getOutPutStream(String mimeType, File file){
+    public static OutputStream getOutPutStream(Context context,String mimeType, File file){
         OutputStream outputStream = null;
         try {
             Uri mUri = null;
@@ -413,7 +413,7 @@ public class FileUtils {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 destFilePath = (file!=null)? file.getAbsolutePath():
                         Environment.getExternalStorageDirectory()+File.separator+ typeDirectory + File.separator + Config.APP_FOLDER + File.separator + imageFileName;
-                ContentResolver contentResolver = RecorderApplication.getCurrActivityInstance().getApplication().getContentResolver();
+                ContentResolver contentResolver =  context.getContentResolver();
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, imageFileName);
                 contentValues.put(MediaStore.MediaColumns.MIME_TYPE, mimeType);
