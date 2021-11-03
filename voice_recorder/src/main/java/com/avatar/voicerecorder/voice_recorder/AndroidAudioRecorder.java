@@ -7,6 +7,9 @@ import android.os.Environment;
 
 import androidx.fragment.app.Fragment;
 
+import com.avatar.voicerecorder.utils.Config;
+import com.avatar.voicerecorder.utils.FileUtils;
+
 public class AndroidAudioRecorder {
 
     protected static final String EXTRA_FILE_PATH = "filePath";
@@ -20,7 +23,7 @@ public class AndroidAudioRecorder {
     private Activity activity;
     private Fragment fragment;
 
-    private String filePath = Environment.getExternalStorageDirectory() + "/recorded_audio.wav";
+    private String filePath = null;//Environment.getExternalStorageDirectory() + "/recorded_audio.wav";
     private AudioSourceEnum source = AudioSourceEnum.MIC;
     private AudioChannel channel = AudioChannel.STEREO;
     private AudioSampleRate sampleRate = AudioSampleRate.HZ_44100;
@@ -89,6 +92,9 @@ public class AndroidAudioRecorder {
 
     public void record() {
         Intent intent = new Intent(activity, AudioRecorderActivity.class);
+        if(filePath==null){
+            filePath = FileUtils.generateFilePathWithTimeStamp(Config.WAV);
+        }
         intent.putExtra(EXTRA_FILE_PATH, filePath);
         intent.putExtra(EXTRA_COLOR, color);
         intent.putExtra(EXTRA_SOURCE, source);
@@ -101,6 +107,9 @@ public class AndroidAudioRecorder {
 
     public void recordFromFragment() {
         Intent intent = new Intent(fragment.getActivity(), AudioRecorderActivity.class);
+        if(filePath==null){
+            FileUtils.generateFilePathWithTimeStamp(Config.WAV);
+        }
         intent.putExtra(EXTRA_FILE_PATH, filePath);
         intent.putExtra(EXTRA_COLOR, color);
         intent.putExtra(EXTRA_SOURCE, source);
